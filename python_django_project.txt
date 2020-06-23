@@ -1,0 +1,30 @@
+1. pip install django crispy-forms django-pyodbc-azure-2019 
+2. download bootstrap
+3. download helloworld
+
+configure helloworld
+creating helloworld
+1. django-damin startproject 'project-name'
+2. cd 'project-name' && python manage.py runserver
+3. python manage.py migrate for making changes in db scema
+4. creating views.py inside helloworld and templates folder and all templates
+5. adding urlpattern to urls.py
+6. adding function that handling the urlpattern in views.py
+
+
+
+settings.py configuration
+1. adding 'helloworld' to INSTALLED_APPS
+2. adding templates path 'DIRS': [os.path.join(BASE_DIR, 'helloworld/templates'),],
+3. adding static path
+    STATICFILES_DIRS = [
+    os.path.join(BASE_DIR + '/helloworld', 'static'),
+    ]
+4. adding bootstrap to base
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+5. extending base.html
+
+
+download vscode extension offline
+https://vscode-offline.herokuapp.com/
