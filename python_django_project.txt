@@ -28,3 +28,14 @@ settings.py configuration
 
 download vscode extension offline
 https://vscode-offline.herokuapp.com/
+
+
+	$(document).ready(function () {
+			$('#id_status').change(function () {
+				console.log($(this).val())
+				event.preventDefault();
+				jQuery.noConflict();
+				$('#exampleModal1').modal('show');
+			});
+		});
+        
