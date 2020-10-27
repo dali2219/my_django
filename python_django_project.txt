@@ -39,3 +39,21 @@ https://vscode-offline.herokuapp.com/
 			});
 		});
         
+editForm = PersonForm(instance=can)
+    editCommForm = PersonFormComments(instance=can)
+    if request.method == 'POST':
+        if 'editForm' in request.POST:
+            editForm = PersonForm(request.POST, instance=can)
+            if editForm.is_valid():
+                print('hello editForm.save()')
+                editForm.save()
+                return redirect('/')
+        if 'editCommForm' in request.POST:
+            editCommForm = PersonFormComments(request.POST, instance=can)
+            editForm = PersonForm(request.POST, instance=can)
+            if editCommForm.is_valid() and editForm.is_valid():
+                print('hello editcommForm.save()')
+                editCommForm.save()
+                editForm.save()
+                return redirect('/')
+		
