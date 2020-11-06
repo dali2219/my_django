@@ -57,3 +57,31 @@ editForm = PersonForm(instance=can)
                 editForm.save()
                 return redirect('/')
 		
+##index.html
+<style>
+						tr[data-delivery="2"] {
+							background-color: #f2dede;
+							color: red;
+							overflow: auto;
+							animation: blinker 1s linear infinite;
+
+						}
+
+						@keyframes blinker {
+							50% {
+								opacity: 0;
+							}
+						}
+						### change headers color 
+						thead tr th a {
+							color: red;
+						}
+					</style>
+					
+					
+table.py
+        row_attrs = {
+            'data-delivery': lambda record: record.status
+        }
+	
+	
